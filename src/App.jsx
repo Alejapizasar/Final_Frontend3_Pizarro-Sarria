@@ -1,4 +1,3 @@
-
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import {BrowserRouter, Routes,Route} from "react-router-dom";
@@ -6,10 +5,12 @@ import Home from "./Routes/Home";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs";
 import Contact from "./Routes/Contact";
+import { ContextProvider } from "./Context/global.context";
 
 function App() {
   return (
-      <div className="App">
+    <div className="App">
+      <ContextProvider>
         <BrowserRouter>
           <Navbar/>
             <Routes>
@@ -20,7 +21,8 @@ function App() {
             </Routes>
           <Footer/>
         </BrowserRouter>
-      </div>
+      </ContextProvider>
+    </div>
   );
 }
 
