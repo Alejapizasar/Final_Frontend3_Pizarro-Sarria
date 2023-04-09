@@ -29,15 +29,14 @@ const Card = ({ name, username, id }) => {
         {/* En cada card deberan mostrar en name - username y el id */}
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <div>
+        <div className="card">
           <img className ="cardImg" src="./images/doctor.jpg" alt='doctor-images'/>
-          <div>
-          <h2>{name}</h2>
-          <h4>{username}</h4>
-          </div>
+            <h2>{name}</h2>
+            <h4>{username}</h4>
+            <h4>{id}</h4>
+            <button onClick= {() => addFav(name, username, id)} className="favButton"> Add Fav⭐</button>
         </div>
         </Link>
-        <button onClick= {() => addFav(name, username, id)} className="favButton"> Add Fav⭐</button>
     </div>
   );
 };

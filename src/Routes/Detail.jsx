@@ -1,5 +1,7 @@
 import { useParams } from 'react-router-dom'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { ContextGlobal } from "../Context/global.context";
+
 
 
 
@@ -7,6 +9,8 @@ import React, { useEffect, useState } from 'react'
 
 const Detail = () => {  
 // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
+const { context} = useContext(ContextGlobal)
+const {theme } = context
 
   const [singleDentist, setSingleDentist]= useState ({})
   const paramsForDentist = useParams ()
@@ -26,10 +30,11 @@ const Detail = () => {
 
   return (
     <>
+  <div className= {theme}>
       <h1>Detail Dentist: {singleDentist.id}</h1>
       {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
       {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
-      <div>
+      <div className='tableDiv'>
         <table>
         <thead>
           <tr>
@@ -49,6 +54,7 @@ const Detail = () => {
         </tbody>
       </table>
       </div>
+  </div>
     </>
   )
 }

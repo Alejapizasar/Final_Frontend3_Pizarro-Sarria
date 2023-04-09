@@ -7,17 +7,17 @@ import { ContextGlobal } from "../Context/global.context";
 
 const Favs = () => {
   const { context } = useContext(ContextGlobal)
-  const { data } = context
+  const { data, theme } = context
 
 
 const deleteFav = () => {
   localStorage.clear();
-  window.location.reload();
+  window.location.reload()
 }
 
   return (
     <>
-    <div>
+    <div className= {theme}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {/* este componente debe consumir los destacados del localStorage */}

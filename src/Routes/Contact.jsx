@@ -11,8 +11,8 @@ const Contact = () => {
 
   return (
     <div className={theme} >
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
+      <h2 className="formContact">Want to know more?</h2>
+      <p className="formContact">Send us your questions and we will contact you</p>
       <Form/>
     </div>
   )
